@@ -1,0 +1,13 @@
+{
+  "name": "vast",
+  "owner": { "name": "Vast", "url": "https://vast.gg" },
+  "plugins": [
+    {
+      "name": "vast-giveaways",
+      "source": "./",
+      "description": "Run giveaway campaigns on Vast (vast.gg) from your AI agent.",
+      "version": "0.1.0",
+      "category": "marketing"
+    }
+  ]
+}

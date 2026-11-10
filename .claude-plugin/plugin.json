@@ -1,0 +1,21 @@
+{
+  "name": "vast-giveaways",
+  "version": "0.1.0",
+  "description": "Run giveaway campaigns on Vast (vast.gg) from your AI agent: draft, add entry actions such as following on X or joining Discord, preview, publish, and track entries.",
+  "author": {
+    "name": "Vast",
+    "url": "https://vast.gg"
+  },
+  "homepage": "https://vast.gg/help/use-vast-with-ai-agents",
+  "repository": "https://github.com/Firstbloodio/vast-giveaways",
+  "license": "MIT",
+  "keywords": [
+    "giveaway",
+    "sweepstakes",
+    "marketing",
+    "growth",
+    "community",
+    "mcp"
+  ],
+  "privacyPolicyUrl": "https://vast.gg/privacy-policy"
+}

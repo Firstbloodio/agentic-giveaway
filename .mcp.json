@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "vast": {
+      "type": "http",
+      "url": "https://general.vast.gg/mcp",
+      "headers": { "Authorization": "Bearer ${VAST_API_KEY}" }
+    }
+  }
+}
