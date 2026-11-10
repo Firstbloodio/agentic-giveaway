@@ -5,7 +5,7 @@
     {
       "name": "vast-giveaways",
       "source": "./",
-      "description": "Run giveaway campaigns on Vast (vast.gg) from your AI agent.",
+      "description": "Run giveaways on Vast (vast.gg) from your AI agent.",
       "version": "0.1.0",
       "category": "marketing"
     }

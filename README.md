@@ -1,9 +1,9 @@
 # Vast giveaways for AI agents
 
-Let your AI agent run giveaway campaigns on [Vast](https://vast.gg). It can draft a giveaway, add entry actions such as following on X or joining Discord, preview it, publish it when you say so, and report entries and winners.
+Let your AI agent run giveaways on [Vast](https://vast.gg). It can draft a giveaway, add entry actions such as following on X or joining Discord, preview it, publish it when you say so, and report entries and winners.
 
 This repo contains:
-- **`skills/vast-giveaways/SKILL.md`**: teaches the agent how to run a campaign and what to hand back to you.
+- **`skills/vast-giveaways/SKILL.md`**: teaches the agent how to run a giveaway and what to hand back to you.
 - **`.mcp.json`**: connects the agent to Vast's MCP server at `https://general.vast.gg/mcp`.
 
 ## Before you start

@@ -14,7 +14,7 @@ Vast (vast.gg) runs giveaways where people earn entries by doing actions, such a
 
 If a tool returns `not_eligible`, the plan is the blocker. Add "Upgrade at vast.gg/upgrade" to the action plan (below) and stop.
 
-## Running a campaign
+## Running a giveaway
 1. **Ask for the goal.** Who should enter, what they should do (e.g. "follow @brand on X and join our Discord"), the prize and its value, how many winners, and the start and end dates with a time zone.
 2. **Check the limits** with `get_my_plan_limits`. It shows how many giveaways are left this month, and the prize and winner limits.
 3. **Pick the actions** with `list_action_types`. Use only the types it returns. Some kinds can only be set up in the web editor. Put those in the action plan, and don't fake them with other types.
