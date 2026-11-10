@@ -24,6 +24,9 @@ If a tool returns `not_eligible`, the plan is the blocker. Add "Upgrade at vast.
    - If the answer is `checkout_required`, the host must pay at the `checkout_url`. Add it to the action plan.
 7. **Report results** with `get_entry_stats` when asked: views, entrants, entries, and completions per action. Winners appear there after the draw.
 
+## Cover images
+To add a cover, upload it with `POST https://general.vast.gg/storage/upload` (multipart, field `file`, group `activityImg`) and pass the returned URL as `cover_image_url`. Uploads made with an API key must be PNG, JPEG, WebP or GIF, at most 5 MB, sent with a `Content-Length` header. Anything else is refused.
+
 ## Always end with the action plan
 Finish every session with a short list of what's done and what only the human can do. For example:
 - ✅ Draft "Win a $100 gift card" is ready: <draft link>
