@@ -9,7 +9,7 @@ This repo works in Claude Code, Codex and any agent that reads [Agent Skills](ht
 - **`server.json`**: the listing for the [MCP Registry](https://registry.modelcontextprotocol.io).
 
 ## Before you start
-1. Get a Vast account. Every plan gets agent keys. The FREE plan allows 2 active keys after a one-time email confirmation; each free giveaway admits at most 500 people until the host upgrades. Upgrading lifts the cap: https://vast.gg/upgrade
+1. Get a Vast account. Agent keys come with paid plans today. Vast is rolling out agent keys on the free plan too (2 active keys after a one-time email confirmation; each free giveaway admits at most 500 people until the host upgrades) — the Developer page at https://vast.gg/settings/developer shows which applies to this account. Upgrading at https://vast.gg/upgrade lifts the cap.
 2. Create an API key: https://vast.gg/settings/developer
 3. Keep the key out of chat. Each install below says where it goes.
 
@@ -25,8 +25,12 @@ In Claude Code, run `/plugin install agentic-giveaway@vast` once, then `/plugin 
 
 ## Install in Codex
 Codex reads the key from the `VAST_API_KEY` environment variable. Load your key into that variable through your secret manager and export it first; keep the key itself out of shell commands and history.
+Run this first on its own, then paste your key when it asks.
 ```bash
 read -rs VAST_API_KEY && export VAST_API_KEY   # paste the key when prompted; it stays out of your shell history
+```
+
+```bash
 codex plugin marketplace add Firstbloodio/agentic-giveaway
 codex plugin add agentic-giveaway@vast
 ```
@@ -48,8 +52,12 @@ It asks which agents to install the skill for (Claude Code, Codex, Cursor and ot
 - Header on every request: `Authorization: Bearer <your key>`
 
 Claude Code, without the plugin: load your key into `VAST_API_KEY` through your secret manager and export it first.
+Run this first on its own, then paste your key when it asks.
 ```bash
 read -rs VAST_API_KEY && export VAST_API_KEY   # paste the key when prompted; it stays out of your shell history
+```
+
+```bash
 claude mcp add --transport http vast https://general.vast.gg/mcp --header "Authorization: Bearer $VAST_API_KEY"
 ```
 
