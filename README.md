@@ -38,6 +38,9 @@ read -rs VAST_API_KEY && export VAST_API_KEY   # paste the key when prompted; it
 codex plugin marketplace add https://vast.gg/plugins/agentic-giveaway.git
 codex plugin add agentic-giveaway@vast
 ```
+
+Already added the `vast` marketplace from GitHub? Keep it: it still works, so there is nothing to change. Codex refuses to add a second marketplace named `vast` from a different source. To switch to the vast.gg address, remove the old `vast` marketplace first, then run the commands above.
+
 This adds the skill and the `vast` MCP server. To add only the MCP server:
 ```bash
 codex mcp add vast --url https://general.vast.gg/mcp --bearer-token-env-var VAST_API_KEY
