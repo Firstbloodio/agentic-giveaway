@@ -1,14 +1,13 @@
 {
   "name": "agentic-giveaway",
   "displayName": "Vast Giveaways",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Run giveaways on Vast (vast.gg) from your AI agent: draft, add entry actions such as following on X or joining Discord, preview, publish, and track entries.",
   "author": {
     "name": "Vast",
     "url": "https://vast.gg"
   },
   "homepage": "https://vast.gg/help/use-vast-with-ai-agents",
-  "repository": "https://github.com/Firstbloodio/agentic-giveaway",
   "license": "MIT",
   "keywords": [
     "giveaway",

@@ -5,7 +5,7 @@ Let your AI agent run giveaways on [Vast](https://vast.gg). It can draft a givea
 This repo works in Claude Code, Codex and any agent that reads [Agent Skills](https://agentskills.io):
 - **`skills/agentic-giveaway/SKILL.md`**: teaches the agent how to run a giveaway and what to hand back to you.
 - **`.mcp.json`** (Claude Code) and **`mcp.json`** (Codex): connect the agent to Vast's MCP server at `https://general.vast.gg/mcp`.
-- **`.claude-plugin/`** and **`.codex-plugin/`**: the plugin manifests and the `vast` marketplace.
+- **`.claude-plugin/`** and **`.codex-plugin/`**: the plugin manifests and the `vast` marketplace. vast.gg serves the same marketplace at `https://vast.gg/plugins/claude/marketplace.json` for Claude Code and `https://vast.gg/plugins/agentic-giveaway.git` for Codex, so the commands below don't change if this repo moves.
 - **`server.json`**: the listing for the [MCP Registry](https://registry.modelcontextprotocol.io).
 
 Paste a Shopify product link and the agent fills the prize from the store's product data (title, variants, price, image).
@@ -17,10 +17,12 @@ Paste a Shopify product link and the agent fills the prize from the store's prod
 
 ## Install in Claude Code
 ```bash
-claude plugin marketplace add Firstbloodio/agentic-giveaway
+claude plugin marketplace add https://vast.gg/plugins/claude/marketplace.json
 claude plugin install agentic-giveaway@vast
 ```
 Then add your key: in Claude Code, run `/plugin configure agentic-giveaway@vast` and paste it into the "Vast API key" field. If you install from `/plugin` inside Claude Code, it asks for the key during install. Claude Code keeps the key in secure storage (the keychain on a Mac), not in a settings file.
+
+Already added the `vast` marketplace from this repo? Keep it: it is the same marketplace, so there is nothing to change. Adding it again from the vast.gg address fails while the first one is registered.
 
 ## Upgrading from vast-giveaways
 In Claude Code, run `/plugin install agentic-giveaway@vast` once, then `/plugin configure agentic-giveaway@vast` to enter your key.
@@ -33,9 +35,12 @@ read -rs VAST_API_KEY && export VAST_API_KEY   # paste the key when prompted; it
 ```
 
 ```bash
-codex plugin marketplace add Firstbloodio/agentic-giveaway
+codex plugin marketplace add https://vast.gg/plugins/agentic-giveaway.git
 codex plugin add agentic-giveaway@vast
 ```
+
+Already added the `vast` marketplace from GitHub? Keep it: it still works, so there is nothing to change. Codex refuses to add a second marketplace named `vast` from a different source. To switch to the vast.gg address, remove the old `vast` marketplace first, then run the commands above.
+
 This adds the skill and the `vast` MCP server. To add only the MCP server:
 ```bash
 codex mcp add vast --url https://general.vast.gg/mcp --bearer-token-env-var VAST_API_KEY
@@ -43,11 +48,11 @@ codex mcp add vast --url https://general.vast.gg/mcp --bearer-token-env-var VAST
 
 ## Install with skills.sh (Vercel)
 ```bash
-npx skills add Firstbloodio/agentic-giveaway
+npx skills add https://vast.gg
 ```
-The skills CLI sends telemetry by default; set `DISABLE_TELEMETRY=1` to opt out (for example, `DISABLE_TELEMETRY=1 npx skills add Firstbloodio/agentic-giveaway`).
+The skills CLI sends telemetry by default; set `DISABLE_TELEMETRY=1` to opt out (for example, `DISABLE_TELEMETRY=1 npx skills add https://vast.gg`).
 
-It asks which agents to install the skill for (Claude Code, Codex, Cursor and others). This installs the skill only, so also connect the MCP server as shown below. The skill does nothing without the `vast` MCP server at `https://general.vast.gg/mcp`, using the header `Authorization: Bearer <key>`. To skip the questions: `npx skills add Firstbloodio/agentic-giveaway --skill agentic-giveaway -a codex -y`.
+It asks which agents to install the skill for (Claude Code, Codex, Cursor and others). This installs the skill only, so also connect the MCP server as shown below. The skill does nothing without the `vast` MCP server at `https://general.vast.gg/mcp`, using the header `Authorization: Bearer <key>`. To skip the questions: `npx skills add https://vast.gg --skill agentic-giveaway -a codex -y`.
 
 ## Connect the MCP server manually
 - URL: `https://general.vast.gg/mcp` (Streamable HTTP)
