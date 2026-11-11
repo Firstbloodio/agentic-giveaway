@@ -1,5 +1,5 @@
 ---
-name: vast-giveaways
+name: agentic-giveaway
 description: Use when someone wants to run a giveaway, sweepstakes or social growth campaign on Vast (vast.gg), such as growing X, Discord, Telegram or YouTube followers, building hype for a launch, or rewarding a community. Also use when they ask to draft, publish or check the results of a Vast giveaway.
 ---
 

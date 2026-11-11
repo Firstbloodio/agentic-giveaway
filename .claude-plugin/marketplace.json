@@ -3,7 +3,7 @@
   "owner": { "name": "Vast", "url": "https://vast.gg" },
   "plugins": [
     {
-      "name": "vast-giveaways",
+      "name": "agentic-giveaway",
       "source": "./",
       "description": "Run giveaways on Vast (vast.gg) from your AI agent.",
       "version": "0.1.0",

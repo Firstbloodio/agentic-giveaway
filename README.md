@@ -3,7 +3,7 @@
 Let your AI agent run giveaways on [Vast](https://vast.gg). It can draft a giveaway, add entry actions such as following on X or joining Discord, preview it, publish it when you say so, and report entries and winners.
 
 This repo contains:
-- **`skills/vast-giveaways/SKILL.md`**: teaches the agent how to run a giveaway and what to hand back to you.
+- **`skills/agentic-giveaway/SKILL.md`**: teaches the agent how to run a giveaway and what to hand back to you.
 - **`.mcp.json`**: connects the agent to Vast's MCP server at `https://general.vast.gg/mcp`.
 
 ## Before you start
@@ -18,13 +18,13 @@ This repo contains:
 
 **Claude Code**
 ```bash
-claude plugin marketplace add Firstbloodio/vast-giveaways
-claude plugin install vast-giveaways@vast
+claude plugin marketplace add Firstbloodio/agentic-giveaway
+claude plugin install agentic-giveaway@vast
 ```
 
 **Claude Code, Cursor, Codex and other agents (the skill only)**
 ```bash
-npx skills add Firstbloodio/vast-giveaways
+npx skills add Firstbloodio/agentic-giveaway
 ```
 Then connect the MCP server yourself, for example in Claude Code:
 ```bash
