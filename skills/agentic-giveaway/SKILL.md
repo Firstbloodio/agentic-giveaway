@@ -10,7 +10,11 @@ Vast (vast.gg) runs giveaways where people earn entries by doing actions, such a
 ## Setup (once)
 1. The host needs a Vast account with a paid plan. Plans are at https://vast.gg/upgrade.
 2. The host creates an API key at https://vast.gg/settings/developer. The defaults ("Read giveaways", "Create and edit drafts") are enough to build drafts. To publish and report results, also tick "Publish giveaways", "Entry stats" and "Winners".
-3. The key goes in the `VAST_API_KEY` environment variable. Never ask for the key in chat, and never print it.
+3. The key never goes in chat. Never ask for it, and never print it. Where it goes depends on the agent:
+   - Claude Code with the Vast plugin: the host runs `/plugin configure agentic-giveaway@vast` in Claude Code and pastes it there. Claude Code keeps it in secure storage.
+   - Codex, and agents connected by hand: the `VAST_API_KEY` environment variable.
+   - claude.ai: a request header on the Vast connector.
+   If the `vast` tools are missing or every call says the key is invalid, point the host to https://vast.gg/help/use-vast-with-ai-agents and stop.
 
 If a tool returns `not_eligible`, the plan is the blocker. Add "Upgrade at vast.gg/upgrade" to the action plan (below) and stop.
 
@@ -25,7 +29,7 @@ If a tool returns `not_eligible`, the plan is the blocker. Add "Upgrade at vast.
 7. **Report results** with `get_entry_stats` when asked: views, entrants, entries, and completions per action. Winners appear there after the draw.
 
 ## Cover images
-To add a cover, upload it with `POST https://general.vast.gg/storage/upload` (multipart, field `file`, group `activityImg`) and pass the returned URL as `cover_image_url`. Uploads made with an API key must be PNG, JPEG, WebP or GIF, at most 5 MB, sent with a `Content-Length` header. Anything else is refused.
+To add a cover, upload it with `POST https://general.vast.gg/storage/upload` (multipart, field `file`, group `activityImg`) and pass the returned URL as `cover_image_url`. Uploads made with an API key must be PNG, JPEG, WebP or GIF, at most 5 MB, sent with a `Content-Length` header. Anything else is refused. The upload needs the key in `VAST_API_KEY`. If it isn't set in your shell, don't hunt for it: add "Add a cover image in the web editor" to the action plan.
 
 ## Always end with the action plan
 Finish every session with a short list of what's done and what only the human can do. For example:
