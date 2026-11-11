@@ -14,7 +14,7 @@
   "mcpServers": "./mcp.json",
   "interface": {
     "displayName": "Vast Giveaways",
-    "shortDescription": "Draft, publish and track giveaways on Vast",
+    "shortDescription": "Run giveaways on Vast",
     "longDescription": "Run giveaways on Vast (vast.gg) from Codex. People enter by doing actions such as following on X or joining Discord. Vast tracks entries, writes the official rules and draws the winners. Giveaways stay drafts until you say publish.",
     "developerName": "Vast",
     "category": "Marketing",
