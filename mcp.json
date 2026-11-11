@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "vast": {
+      "type": "streamable-http",
+      "url": "https://general.vast.gg/mcp",
+      "bearer_token_env_var": "VAST_API_KEY",
+      "extensions": {
+        "com.openai": {
+          "auth": { "type": "api_key", "headerScheme": "bearer" }
+        }
+      }
+    }
+  }
+}
