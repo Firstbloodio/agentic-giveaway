@@ -5,11 +5,6 @@
   "description": "Run giveaways on Vast: draft, add entry actions, publish, and track entries and winners.",
   "version": "0.2.0",
   "websiteUrl": "https://vast.gg/help/use-vast-with-ai-agents",
-  "repository": {
-    "url": "https://github.com/Firstbloodio/agentic-giveaway",
-    "source": "github",
-    "id": "1452139660"
-  },
   "icons": [
     {
       "src": "https://vast.gg/apple-touch-icon.png",

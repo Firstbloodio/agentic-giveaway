@@ -7,7 +7,6 @@
     "url": "https://vast.gg"
   },
   "homepage": "https://vast.gg/help/use-vast-with-ai-agents",
-  "repository": "https://github.com/Firstbloodio/agentic-giveaway",
   "license": "MIT",
   "keywords": ["giveaway", "sweepstakes", "marketing", "growth", "community", "mcp"],
   "skills": "./skills/",
