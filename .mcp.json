@@ -3,7 +3,7 @@
     "vast": {
       "type": "http",
       "url": "https://general.vast.gg/mcp",
-      "headers": { "Authorization": "Bearer ${VAST_API_KEY}" }
+      "headers": { "Authorization": "Bearer ${user_config.api_key}" }
     }
   }
 }

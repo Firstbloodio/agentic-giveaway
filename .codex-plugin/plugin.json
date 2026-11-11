@@ -1,0 +1,30 @@
+{
+  "name": "agentic-giveaway",
+  "version": "0.2.0",
+  "description": "Run giveaways on Vast (vast.gg) from your AI agent: draft, add entry actions such as following on X or joining Discord, preview, publish, and track entries.",
+  "author": {
+    "name": "Vast",
+    "url": "https://vast.gg"
+  },
+  "homepage": "https://vast.gg/help/use-vast-with-ai-agents",
+  "repository": "https://github.com/Firstbloodio/agentic-giveaway",
+  "license": "MIT",
+  "keywords": ["giveaway", "sweepstakes", "marketing", "growth", "community", "mcp"],
+  "skills": "./skills/",
+  "mcpServers": "./mcp.json",
+  "interface": {
+    "displayName": "Vast Giveaways",
+    "shortDescription": "Run giveaways on Vast",
+    "longDescription": "Run giveaways on Vast (vast.gg) from Codex. People enter by doing actions such as following on X or joining Discord. Vast tracks entries, writes the official rules and draws the winners. Giveaways stay drafts until you say publish.",
+    "developerName": "Vast",
+    "category": "Marketing",
+    "capabilities": ["Write"],
+    "websiteURL": "https://vast.gg",
+    "privacyPolicyURL": "https://vast.gg/privacy-policy",
+    "termsOfServiceURL": "https://vast.gg/terms-and-conditions",
+    "defaultPrompt": [
+      "Draft a one-week giveaway for a $100 gift card",
+      "How are my Vast giveaways doing?"
+    ]
+  }
+}

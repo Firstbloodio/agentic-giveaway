@@ -1,0 +1,42 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "gg.vast/agentic-giveaway",
+  "title": "Vast Giveaways",
+  "description": "Run giveaways on Vast: draft, add entry actions, publish, and track entries and winners.",
+  "version": "0.2.0",
+  "websiteUrl": "https://vast.gg/help/use-vast-with-ai-agents",
+  "repository": {
+    "url": "https://github.com/Firstbloodio/agentic-giveaway",
+    "source": "github",
+    "id": "1452139660"
+  },
+  "icons": [
+    {
+      "src": "https://vast.gg/apple-touch-icon.png",
+      "mimeType": "image/png",
+      "sizes": ["180x180"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://general.vast.gg/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer token: a Vast API key from https://vast.gg/settings/developer",
+          "isRequired": true,
+          "isSecret": true,
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Vast API key from https://vast.gg/settings/developer",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

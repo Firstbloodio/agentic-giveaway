@@ -1,13 +1,14 @@
 {
-  "name": "vast-giveaways",
-  "version": "0.1.0",
+  "name": "agentic-giveaway",
+  "displayName": "Vast Giveaways",
+  "version": "0.2.0",
   "description": "Run giveaways on Vast (vast.gg) from your AI agent: draft, add entry actions such as following on X or joining Discord, preview, publish, and track entries.",
   "author": {
     "name": "Vast",
     "url": "https://vast.gg"
   },
   "homepage": "https://vast.gg/help/use-vast-with-ai-agents",
-  "repository": "https://github.com/Firstbloodio/vast-giveaways",
+  "repository": "https://github.com/Firstbloodio/agentic-giveaway",
   "license": "MIT",
   "keywords": [
     "giveaway",
@@ -17,5 +18,17 @@
     "community",
     "mcp"
   ],
-  "privacyPolicyUrl": "https://vast.gg/privacy-policy"
+  "documentationUrl": "https://vast.gg/help/use-vast-with-ai-agents",
+  "supportUrl": "https://vast.gg/help",
+  "privacyPolicyUrl": "https://vast.gg/privacy-policy",
+  "termsOfServiceUrl": "https://vast.gg/terms-and-conditions",
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "Vast API key",
+      "description": "Create a key at https://vast.gg/settings/developer. Claude Code keeps it in secure storage, not in your settings.",
+      "required": true,
+      "sensitive": true
+    }
+  }
 }

@@ -1,18 +1,27 @@
 ---
-name: vast-giveaways
+name: agentic-giveaway
 description: Use when someone wants to run a giveaway, sweepstakes or social growth campaign on Vast (vast.gg), such as growing X, Discord, Telegram or YouTube followers, building hype for a launch, or rewarding a community. Also use when they ask to draft, publish or check the results of a Vast giveaway.
 ---
 
 # Running giveaways on Vast
 
-Vast (vast.gg) runs giveaways where people earn entries by doing actions, such as following an X account, joining a Discord server or visiting a link. Vast handles entry tracking, official rules and the winner draw. You work through the `vast` MCP server's tools.
+Vast (vast.gg) runs giveaways where people earn entries by doing actions, such as following an X account, joining a Discord server or visiting a link. Vast handles entry tracking, official rules and the winner draw. You work through the `vast` MCP server's tools. This skill does nothing without the `vast` MCP server at `https://general.vast.gg/mcp`, using the header `Authorization: Bearer <key>`.
 
 ## Setup (once)
-1. The host needs a Vast account with a paid plan. Plans are at https://vast.gg/upgrade.
+1. The host needs a Vast account. Agent keys come with paid plans today. Vast is rolling out agent keys on the free plan too (2 active keys after a one-time email confirmation; each free giveaway admits at most 500 people until the host upgrades) — the Developer page at https://vast.gg/settings/developer shows which applies to this account. Upgrading at https://vast.gg/upgrade lifts the cap.
 2. The host creates an API key at https://vast.gg/settings/developer. The defaults ("Read giveaways", "Create and edit drafts") are enough to build drafts. To publish and report results, also tick "Publish giveaways", "Entry stats" and "Winners".
-3. The key goes in the `VAST_API_KEY` environment variable. Never ask for the key in chat, and never print it.
+3. The key never goes in chat. Never ask for it, and never print it. Where it goes depends on the agent:
+   - Claude Code with the Vast plugin: the host runs `/plugin configure agentic-giveaway@vast` in Claude Code and pastes it there. Claude Code keeps it in secure storage.
+   - Codex, and agents connected by hand: the `VAST_API_KEY` environment variable.
+   - claude.ai: a request header on the Vast connector.
+   If the `vast` tools are missing, point the host to https://vast.gg/help/use-vast-with-ai-agents and stop.
 
-If a tool returns `not_eligible`, the plan is the blocker. Add "Upgrade at vast.gg/upgrade" to the action plan (below) and stop.
+If a tool returns one of these errors, add the next step to the action plan (below) and stop:
+- `not_eligible` with `reason: email_unconfirmed`: open the returned `confirm_url` to confirm the host’s email.
+- `not_eligible` with any other reason: upgrade at https://vast.gg/upgrade.
+- `too_many_keys`: remove a key in Settings → Developer at https://vast.gg/settings/developer.
+- `giveaway_full`: the giveaway hit its 500-person limit; upgrade at https://vast.gg/upgrade to lift it.
+- `invalid_api_key`: check the key configured for the `vast` MCP server; never ask for it in chat.
 
 ## Running a giveaway
 1. **Ask for the goal.** Who should enter, what they should do (e.g. "follow @brand on X and join our Discord"), the prize and its value, how many winners, and the start and end dates with a time zone.
@@ -25,7 +34,7 @@ If a tool returns `not_eligible`, the plan is the blocker. Add "Upgrade at vast.
 7. **Report results** with `get_entry_stats` when asked: views, entrants, entries, and completions per action. Winners appear there after the draw.
 
 ## Cover images
-To add a cover, upload it with `POST https://general.vast.gg/storage/upload` (multipart, field `file`, group `activityImg`) and pass the returned URL as `cover_image_url`. Uploads made with an API key must be PNG, JPEG, WebP or GIF, at most 5 MB, sent with a `Content-Length` header. Anything else is refused.
+To add a cover, upload it with `POST https://general.vast.gg/storage/upload` (multipart, field `file`, group `activityImg`) and pass the returned URL as `cover_image_url`. Uploads must be PNG, JPEG, WebP or GIF (checked by magic bytes), at most 5 MB. Free keys must send a `Content-Length` header. Anything else is refused. The upload needs the key in `VAST_API_KEY`. If it isn't set in your shell, don't hunt for it: add "Add a cover image in the web editor" to the action plan.
 
 ## Always end with the action plan
 Finish every session with a short list of what's done and what only the human can do. For example:
